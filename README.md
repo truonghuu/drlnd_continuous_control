@@ -1,4 +1,5 @@
-# Deep Reinforcement Learning Nanodgree: Project on Continuous Control
+# Deep Reinforcement Learning Nanodgree 
+## Project on Continuous Control
 
 ### Project Description
 
