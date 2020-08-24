@@ -18,8 +18,8 @@ The repository consists of several files:
 Continuous_Control.ipynb - the main notebook which will be used to run and train the agent.
 agent.py - defines the Agent that is being trained
 model.py - defines the PyTorch model for the Actor and the Critic network
-checkpoint_actor.pth - is the weights of the trained Actor network when the environment is solved 
-checkpoint_critic.pth - is the weights of the trained Critic network when the environment is solved 
+checkpoint_actor.pth - stores the weights of the trained Actor network when the environment is solved 
+checkpoint_critic.pth - stores the weights of the trained Critic network when the environment is solved 
 
 ### Getting Start
 
