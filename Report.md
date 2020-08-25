@@ -27,4 +27,4 @@ As in other reinforcement learning algorithms, the agent trained with DDPG also 
 
 #### Actor and Critic Networks
 
-
+We define the Actor and Critic networks with fully-connected layers. Except the input and output layers, the networks have 
