@@ -13,6 +13,6 @@ The state space of the environment consists of 33 variables corresponding to pos
 
 ### Learning Algorithm
 
-Since the action of the agent is continuous, we adopt Deep Deterministic Policy Gradient (DDPG) algorithm, which is a model-free off-policy algorithm to train the agent. DDPG combines the ideas of DPG (Deterministic Policy Gradient) and DQN (Deep Q-Network) in which Actor and Critic have two neural networks: a regular network and a target network. The target networks are actually the copies of the regular networks but slowly learns, thus improving the stability in training. The below figure presents the pseudo-codes of the DDPG algorithm.
+Since the action of the agent is continuous, we adopt Deep Deterministic Policy Gradient (DDPG) algorithm, which is a model-free off-policy algorithm to train the agent. DDPG combines the ideas of DPG (Deterministic Policy Gradient) and DQN (Deep Q-Network) in which Actor and Critic have two neural networks: a regular network and a target network. The target networks are actually the copies of the regular networks but slowly learns, thus improving the stability in training. The below figure presents the pseudo-codes of the DDPG algorithm (Image taken from “Continuous Control With Deep Reinforcement Learning” (Lillicrap et al, 2015)).
 
-![DDPG Algorithm](figures/1*BVST6rlxL2csw3vxpeBS8Q.png "Taken from “Continuous Control With Deep Reinforcement Learning” (Lillicrap et al, 2015)")
+![DDPG Algorithm](figures/1*BVST6rlxL2csw3vxpeBS8Q.png)
