@@ -13,7 +13,7 @@ The state space of the environment consists of 33 variables corresponding to pos
 
 ### Code Overview
 
-The repository consists of several files:
+The repository consists of the following files:
 
 `Continuous_Control.ipynb` - the main notebook which will be used to run and train the agent.
 
@@ -24,6 +24,8 @@ The repository consists of several files:
 `checkpoint_actor.pth` - stores the weights of the trained Actor network when the environment is solved 
 
 `checkpoint_critic.pth` - stores the weights of the trained Critic network when the environment is solved 
+
+`Report.md` - The report presenting the details of the DDPG algorithm and experimental results.
 
 ### Getting Start
 
