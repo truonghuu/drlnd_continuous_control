@@ -27,4 +27,24 @@ As in other reinforcement learning algorithms, the agent trained with DDPG also 
 
 #### Actor and Critic Networks
 
-We define the Actor and Critic networks with fully-connected layers. Except the input and output layers, the networks have 
+We define the Actor and Critic networks with fully-connected layers. Except the input and output layers, the networks have 3 hidden layers. The detailed architecture of the Actor and Critic networks is as follows:
+
+##### Actor network
+
+Input layer: 33 nodes (corresponding to 33 variables of the state of the environment)
+Hidden layer 1: 256 nodes
+Hidden layer 2: 128 nodes
+Hidden layer 3: 64 nodes
+Output layer: 4 nodes (corresponding to the number of entries in the action vector of the agent)
+
+##### Critic network
+
+Input layer: 37 nodes (corresponding to 33 variables of the state of the environment and 4 variables of the action)
+Hidden layer 1: 256 nodes
+Hidden layer 2: 128 nodes
+Hidden layer 3: 64 nodes
+Output layer: 1 node (corresponding the Q-value)
+
+We note that betwen hidden layer 1 and hidden layer 2 of both networks, we add a batch normalization layer to standardizes the inputs to hidden layer 2 for each mini-batch. This helps further stabilize the learning process. For the Critic network, rather than concatenating the state and action before feeding to hidden layer 1, we first feed the state to hidden layer 1 and then concatenate the output of hidden layer 1 with the action to feed in hidden 2. 
+
+#### References
