@@ -67,7 +67,17 @@ We have tested the algorithm with a small architecture of the Actor and Critic n
 
 ![Tested Results](figures/tested_result.png)
 
+##### Results with Ornstein-Uhlenbeck Process for Noise Generation
+
 After modifying the network architectures and adopting the batch normalization layers, we achieve expected results. The agent can solve the environment after XXX episodes. In the figure below, we present the evolution of the reward along the training episodes. The results show that the reward quickly increases in the first 100 episodes, and the slowly increases until achieving expected reward (>=+30). 
+
+![Ornstein-Uhlenbeck Process](figures/tested_result.png)
+
+##### Results with Gaussian Process for Noise Generation
+
+We have also trained the agent using Gaussian Process for generating noise to add to the action. As shown in the figure below, we achieved similar performance trends compared to the agent using Ornstein-Uhlenbeck Process.
+
+![Gaussian Process](figures/tested_result.png)
 
 #### Future Directions
 
