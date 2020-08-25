@@ -23,7 +23,7 @@ Since DDPG adopts DQN, it also uses a replay buffer, which is a finite-sized mem
 
 #### Exploration 
 
-Similar to other reinforcement learning algorithms, the agent trained with DDPG also explores the environment by selecting random actions rather than always using the best action it has learned. For discrete action spaces, exploration is done using epsilon-greedy that probabilistically selects a random action. For continuous action spaces, exploration is done by adding noise to the action itself. The original DDPG algorithm uses Ornstein-Uhlenbeck Process to add noise to the action. We keep using this approach in this project. Nevertheless, recent literature (see the references [1,2]) stated that this can also be done by using a Gaussian process. We have additionally implemented this approach in `agent.py` as an experimental option.  
+Similar to other reinforcement learning algorithms, the agent trained with DDPG also explores the environment by selecting random actions rather than always using the best action it has learned. For discrete action spaces, exploration is done using epsilon-greedy that probabilistically selects a random action. For continuous action spaces, exploration is done by adding noise to the action itself. The original DDPG algorithm uses Ornstein-Uhlenbeck Process to generate noise and add to the action. We keep using this approach in this project. Nevertheless, recent literature (see the references [1,2]) stated that this can also be done by using a Gaussian process. We keep this adoption of Gaussian process for noise generation for future work.  
 
 #### Actor and Critic Networks
 
@@ -73,15 +73,11 @@ After modifying the network architectures and adopting the batch normalization l
 
 ![Ornstein-Uhlenbeck Process](figures/tested_result.png)
 
-##### Results with Gaussian Process for Noise Generation
-
-We have also trained the agent using Gaussian Process for generating noise to add to the action. As shown in the figure below, we achieved similar performance trends compared to the agent using Ornstein-Uhlenbeck Process.
-
-![Gaussian Process](figures/tested_result.png)
-
 #### Future Directions
 
 In this project, we used only one agent. This makes the learning process a bit slow. It takes more than XXX episodes to achieve the expected reward. We expect that with multiple agents learning simultaneously, the environment would be solved with a shorter time (smaller number of episodes). With multiple agents interacting with the environment and exploring different actions (via noise added), thus providing more experience for the agents to learn.
+
+As mentioned in the exploration section, noise generation has been done by using Ornstein-Uhlenbeck Process. It would be interesting to implement the Gaussian process and validate this approach in compared with Ornstein-Uhlenbeck Process. 
 
 It is also interesting to implement more advanced algorithms and compared their performance with DDPG. With continuous action space, we can implement the following algorithms to sove this problem.
 
