@@ -55,7 +55,38 @@ Output layer: 1 node (corresponding the Q-value)
 
 We note that betwen hidden layer 1 and hidden layer 2 of both networks, we add a batch normalization layer to standardizes the inputs to hidden layer 2 for each mini-batch. This helps further stabilize the learning process since activations can vary a lot due to fluctuating values of input state. For the Critic network, rather than concatenating the state and action before feeding to hidden layer 1, we first feed the state to hidden layer 1 and then concatenate the output of hidden layer 1 with the action to feed in hidden 2. It is also to be noted that hidden layer 3 for the Actor network is randomly initialized in the range (-0.003, 0.003). This allows us to avoid getting 1 or -1 output values in the initial stages, which would squash our gradients to zero, as we use the `tanh` activation for the output layer.
 
+The implementation of the Actor and Critic networks is presented in `model.py`.
+
+#### Experimental Results
+
+All the training parameters are set in `agent.py`. The discount factor is set to 0.99 and the learning rate of Actor and Critic models is set to 1e-3. 
+
+##### Results with small architecture of Actor and Critic networks
+
+We have tested the algorithm with a small architecture of the Actor and Critic networks, which have 2 hidden layers with 128 and 64 hidden nodes without any batch normalization. However, we have not successfully trained the agent, thus not achieving the expected reward. In the figure below, we present the evolution of the reward with respect to the training episodes. While we observed an increasing trend of the reward, the reward significantly oscillates. After 500 episodes, we obtained an average reward of only +5.   
+
+![Tested Results](figures/tested_result.png)
+
+After modifying the network architectures and adopting the batch normalization layers, we achieve expected results. The agent can solve the environment after XXX episodes. In the figure below, we present the evolution of the reward along the training episodes. The results show that the reward quickly increases in the first 100 episodes, and the slowly increases until achieving expected reward (>=+30). 
+
+#### Future Directions
+
+In this project, we used only one agent. This makes the learning process a bit slow. It takes more than XXX episodes to achieve the expected reward. We expect that with multiple agents learning simultaneously, the environment would be solved with a shorter time (smaller number of episodes). With multiple agents interacting with the environment and exploring different actions (via noise added), thus providing more experience for the agents to learn.
+
+It is also interesting to implement more advanced algorithms and compared their performance with DDPG. With continuous action space, we can implement the following algorithms to sove this problem.
+
+Distributed Distributional Deterministic Policy Gradients [2]
+
+Asynchorous Methods for Deep Reinforcement Learning [3]
+
+Proximal Policy Optimization Algorithms [4]
+
 #### References
 
 [1] https://arxiv.org/pdf/1802.09477.pdf
+
 [2] https://arxiv.org/pdf/1804.08617.pdf
+
+[3] https://arxiv.org/abs/1602.01783
+
+[4] https://arxiv.org/abs/1707.06347
