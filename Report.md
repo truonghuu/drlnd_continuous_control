@@ -75,7 +75,7 @@ After modifying the network architectures and adopting the batch normalization l
 
 #### Future Directions
 
-In this project, we used only one agent. This makes the learning process a bit slow. It takes more than XXX episodes to achieve the expected reward. We expect that with multiple agents learning simultaneously, the environment would be solved with a shorter time (smaller number of episodes). With multiple agents interacting with the environment and exploring different actions (via noise added), thus providing more experience for the agents to learn.
+In this project, we used only one agent. This makes the learning process a bit slow. It takes more than 1500 episodes to achieve the expected reward. We expect that with multiple agents learning simultaneously, the environment would be solved with a shorter time (smaller number of episodes). With multiple agents interacting with the environment and exploring different actions (via noise added), thus providing more experience for the agents to learn.
 
 As mentioned in the exploration section, noise generation has been done by using Ornstein-Uhlenbeck Process. It would be interesting to implement the Gaussian process and validate this approach in compared with Ornstein-Uhlenbeck Process. 
 
