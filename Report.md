@@ -67,11 +67,11 @@ We have tested the algorithm with a small architecture of the Actor and Critic n
 
 ![Tested Results](figures/tested_result.png)
 
-##### Results with Ornstein-Uhlenbeck Process for Noise Generation
+##### Results with Larger and Deeper Networks
 
-After modifying the network architectures and adopting the batch normalization layers, we achieve expected results. The agent can solve the environment after XXX episodes. In the figure below, we present the evolution of the reward along the training episodes. The results show that the reward quickly increases in the first 100 episodes, and the slowly increases until achieving expected reward (>=+30). 
+After modifying the network architectures and adopting the batch normalization layers, we achieve expected results. The agent can solve the environment after 1592 episodes. In the figure below, we present the evolution of the reward along the training episodes. The results show that the reward quickly increases in the first 100 episodes. However, the reward decreases after 400 episodes and takes a long time to recover (almost 1000 episodes). This experimental results show that DDPG is  not the best reinforcement learning algorithm for continuous action space and requires further investigation to improve.  
 
-![Ornstein-Uhlenbeck Process](figures/tested_result.png)
+![Ornstein-Uhlenbeck Process](figures/final_results.png)
 
 #### Future Directions
 
